@@ -1,23 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
 import VocabButtons from '../components/VocabButtons';
 import VocabSubmit from '../components/VocabSubmit';
 
 const MainContainer = () => {
+  const response = useRef(null);
+  
   return (
-    <div className="main-container">
-      <form className="lesson-review">
-        <h1>Vista Higher Learning</h1>
-        <VocabButtons />
-        <label className='screen-reader' htmlFor='freeform-response'>
+    <form className="lesson-review">
+      <h1 onClick={() => response.current.focus()}>Vista Higher Learning</h1>
+      <VocabButtons response={response} />
+      <label className='screen-reader' htmlFor='freeform-response'>
           Write your answer based on the reading material:
-        </label>
-        <textarea id='freeform-response' name='freeform-response'>
-          Write your answer based on the reading material
-        </textarea>
-        {/* <VocabText /> */}
-        <VocabSubmit />
-      </form>
-    </div>
+      </label>
+      <textarea id='freeform-response' name='freeform-response' rows='5'
+        ref={response} placeholder='Write your answer based on the reading material.' />
+      <VocabSubmit />
+    </form>
   );
 };
 

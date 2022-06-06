@@ -1,0 +1,116 @@
+html {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 1.4em;
+  text-align: center;
+}
+
+textarea {
+  width: 60%;
+  resize: none;
+}
+
+.screen-reader {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.lesson-review {
+  margin: 0 auto;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.vocab-buttons {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  border-width: 0px;
+
+  legend {
+    text-align: center;
+  }
+}
+
+.media-control {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.media-button {
+  border-radius: 50%;
+  border: 0.75em solid transparent;
+  padding: 20px;
+  outline: none;
+
+  &.active {
+    background-color: yellow;
+  }
+
+  &:hover,&:focus {
+    border: 0.75em solid black;
+  }
+}
+
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.triangle-right {
+	width: 0;
+	height: 0;
+  margin-left: 7px;
+  border-width: 0px;
+	border-top: 25px solid transparent;
+	border-left: 43px solid green;
+	border-bottom: 25px solid transparent;
+  background-color: transparent;
+}
+
+.submit-buttons {
+  text-align: center;
+}
+
+.answer-buttons {
+  text-align: center;
+  margin: 0 auto;
+
+  label {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .vocab-buttons {
+    flex-direction: column;
+  }
+}

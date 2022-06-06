@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const buttonTypes = {
   'Stop': 'square',
@@ -6,13 +6,17 @@ const buttonTypes = {
   'Review your recording': 'triangle-right'
 };
 
-const MediaButton = ({ type }) => {
+const MediaButton = ({ mediaFunc, active, handleClick }) => {
+  
+  
   return (
     <div className='media-control'>
-      <button className='button media-button' aria-label={type}>
-        <div className={buttonTypes[type]} />
+      <button type='button'
+        className={`button media-button ${mediaFunc === active ? 'active' : ''}`}
+        aria-label={mediaFunc} onClick={() => handleClick(mediaFunc)}>
+        <div className={buttonTypes[mediaFunc]} />
       </button>
-      {type}
+      {mediaFunc}
     </div>
   );
 };
