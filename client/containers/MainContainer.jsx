@@ -7,7 +7,6 @@ const MainContainer = () => {
   
   return (
     <form className="lesson-review">
-      <h1 onClick={() => response.current.focus()}>Vista Higher Learning</h1>
       <VocabButtons response={response} />
       <label className='screen-reader' htmlFor='freeform-response'>
           Write your answer based on the reading material:

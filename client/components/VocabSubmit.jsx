@@ -14,7 +14,10 @@ const VocabSubmit = () => {
           value='false' onChange={() => setNoSubmit(true)} />
         <label htmlFor='false'>False</label>
       </div>
-      <input type='submit' value='Submit' disabled={noSubmit} />
+      {noSubmit
+        ? <p className='disabled-form-element'>To submit, select True</p>
+        : <input type='submit' value='Submit' />}
+      {/* <input type='submit' value='Submit' disabled={noSubmit} /> */}
     </div>
   );
 };
