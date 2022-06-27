@@ -9,13 +9,13 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   mode: process.env.NODE_ENV,
   devServer: {
     host: 'localhost',
     port: 8080,
     static: {
-      directory: path.resolve(__dirname, 'dist'),
+      directory: path.resolve(__dirname, '/dist'),
       publicPath: '/'
     },
     hot: true,
