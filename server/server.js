@@ -4,25 +4,17 @@ const express = require('express');
 const port = process.env.PORT || 3000;
 
 const app = express();
-
 app.use(express.json());
 
 if(process.env.NODE_ENV === 'production'){
-  console.log('in production');
-  // statically serve everything in the build folder on the route '/build'
-  app.use('/dist', express.static(path.join(__dirname, '../dist')));
-  // serve index.html on the route '/'
+  app.use(express.static(path.join(__dirname, '../dist')));
   app.get('/', (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
+    return res.status(200).sendFile(path.join(__dirname, '../dist/index.html'));
   });
 }
 
-// catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('Page not found.'));
 
-/**
- * express error handler
- */
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',

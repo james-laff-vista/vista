@@ -9,7 +9,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   mode: process.env.NODE_ENV,
   devServer: {
     host: 'localhost',
