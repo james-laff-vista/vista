@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const buttonTypes = {
   'Stop': 'square',
@@ -7,7 +7,6 @@ const buttonTypes = {
 };
 
 const MediaButton = ({ mediaFunc, active, handleClick }) => {
-  
   
   return (
     <div className='media-control'>
